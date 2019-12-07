@@ -12,6 +12,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
@@ -22,6 +23,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("au.com.dius:pact-jvm-consumer-junit_2.12:3.6.5")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation (fileTree("/lib").include("*.jar"))
 }
 
 tasks.withType<KotlinCompile> {
